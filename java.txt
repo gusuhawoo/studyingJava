@@ -1,0 +1,80 @@
+JAVA
+JAVA : 
+자바의 첫번째 큰 특징은 플랫폼(OS)독립적인 개발이 가능하다는 것. 
+두번째 큰 특징으로는 자동으로 메모리를 관리해준다는 것
+
+JVM : 자바 가상 머신(Java Virtual Machine)
+JDK : 자바의 개발환경으로 JDK의 내부에 JRE가 들어있음.
+JRE : 자바의 실행환경으로 JRE의 내부에 JVM가 들어있음.
+JDK > JRE > JVM
+
+JVM이 있음으로써 OS에 상관없이 독립적으로 실행할 수 있음.
+(ex: 각 OS환경에 맞게 설치된 JDK을 실행할 경우 어떠한 OS에서 개발된 Java라 하더라도 각OS(window, Mac, Linux)에서 실행가능)
+
+byte code → JVM → .exe
+.class(중간어 코드) : 확장자가 .class인 코드는 byte code코드로 만들어져있다.
+특정OS에서 java를 개발하면 byte code코드로 만들어진다.
+확장자가.java인 코드를 컴파일을 하게 되면 어떠한 OS에서 실행될지 모르기 때문에 .exe코드로 만들지 못하고 .class(중간어 코드)로 만들어진다.
+JVM은 [1차] 컴파일된 byte code(.class)를 OS에 맞게 한번 더 [2차]컴파일하여 메모리(.exe)에 로딩하여 실행한다.
+c:₩>java.exe HelloWorld:실행
+ → RPC(원격 프로세서 호출): JVM동작
+
+JVM의 memory model(Runtime Data Area)
+Thread
+1. Method Area
+2. Heap Area Generation
+3. Stack Area(Call Stack Frame Area) PC register Native Method Area
+4. Runtime Constant Pool(Literal Pool)
+
+Java에서 컴파일 명령어와 실행 명령어 : javac.exe(컴파일), java.exe(실행)
+
+객체지향 프로그래밍 언어란? 클래스 단위로 프로그래밍하는 것
+
+JavaSE프로그램의 기본 틀
+public class Hello {
+  public static void main(String[] args) {
+  }
+}
+
+객체지향 프로그램에서 클래스 안에 특정 기능(동작)을 처리하는 함수를 무엇이라고 하는가?
+method(메서드)
+
+JavaSE프로그램에서 프로그램의 진입점(시작점)이며 가장 먼저 실행되는 메서드의 이름은?
+main
+
+JVM(Java Virtual Machine)란 무엇인가?
+자바 프로그램을 구동해주는 프로세서(엔진)
+
+프로그래밍의 3대요소 : 변수(Variable), 자료형(Datatype), 할당(Assign)
+변수 : 데이터를 저장하는 메모리 공간의 이름(symbol),기억공간
+자료형 : 변수의 크기와 어떤 종류의 데이터를 저장할 것인지를 결정하는 것,변수 안에 넣을 데이터의 종류
+할당 : 변수에 데이터를 저장하는 것
+변수선언(변수 + 자료형) : 변수선언을 하면 기억 공간이 만들어진다.
+변수와 자료형이 만나면 「변수선언」이라고 함 (ex : int a;)
+어떤 종류의 데이터를 넣어줄 것인지 지정(변수선언)하고 데이터를 넣어주는 것이  「변수할당」
+초기화 : 변수 선언과 동시에 할당을 할 경우 「초기화가 되었다」고 함(ex : int a = 10;)
+변수 선언과 동시에 할당이 이루어지지 않았을 경우 「초기화가 되지 않았다」고 함( int a;)
+심볼테이블(symbol table) : 변수를 관리하는 테이블
+
+변수의 종류
+인스턴스 변수(멤버변수,instance variable)
+스태틱 변수(클래스변수,static variable)
+지역변수(local variable)
+매개변수(parameter, argument)
+
+변수를 만들기 위해 고려해야하는 자료형의 종류
+기본자료형(Primitive Data Type,PDT) : 프로그램에서 기본적으로 제공해주는 자료형
+사용자정의자료형(User Define Data Type,UDDT) : 사용자가 만들어서 사용하는 자료형
+int,float,char,boolean : 기본자료형
+Book,Movie,Member : 사용자 정의 자료형
+Data Type	크기	데이터(종류)	Default Value 
+(for fields)
+byte	| 1byte |	정수 |	0
+short	| 2byte |	정수 |	0
+int	| 4byte |	정수 |	0
+long	| 8byte |	정수 |	0L
+float	| 4byte |	실수 |	0.0f
+double	| 8byte |	실수 |	0.0d
+char	| 2byte |	문자 |	\u0000,null
+boolean	| 1byte |	참,거짓 |	true, false
+API : 만들어진 자료형(객체자료형)
