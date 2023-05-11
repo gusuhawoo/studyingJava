@@ -1,4 +1,11 @@
 JAVA
+
+intelliJ 단축키 :
+sout : System.out.printIn();이 기본으로 생성됨
+soutm : System.out.printIn(Class.method); 클래스명.메소드명 출력
+soutp : System.out.printIn("parameter="+parameter); 입력받은 파라미터들 출력
+soutv : System.out.printIn("value="+value); 메소드 내에서 사용 가능한 변수 출력
+
 JAVA : 
 자바의 첫번째 큰 특징은 플랫폼(OS)독립적인 개발이 가능하다는 것. 
 두번째 큰 특징으로는 자동으로 메모리를 관리해준다는 것
@@ -65,10 +72,10 @@ JVM(Java Virtual Machine)란 무엇인가?
 변수를 만들기 위해 고려해야하는 자료형의 종류
 기본자료형(Primitive Data Type,PDT) : 프로그램에서 기본적으로 제공해주는 자료형
 사용자정의자료형(User Define Data Type,UDDT) : 사용자가 만들어서 사용하는 자료형
-int,float,char,boolean : 기본자료형
-Book,Movie,Member : 사용자 정의 자료형
-Data Type	크기	데이터(종류)	Default Value 
-(for fields)
+int,float,char,boolean → 기본자료형
+String,Book,Movie,Member → 사용자 정의 자료형(User Define Data Type,UDDT)
+
+Data Type |	크기	| 데이터(종류) |	Default Value(for fields)
 byte	| 1byte |	정수 |	0
 short	| 2byte |	정수 |	0
 int	| 4byte |	정수 |	0
@@ -77,4 +84,22 @@ float	| 4byte |	실수 |	0.0f
 double	| 8byte |	실수 |	0.0d
 char	| 2byte |	문자 |	\u0000,null
 boolean	| 1byte |	참,거짓 |	true, false
+
 API : 만들어진 자료형(객체자료형)
+
+변수 선언 → 자료형(크기, 종류) + 변수 ; → int a;
+변수 할당 → L-Value = R-Value; → 변수에 지정된 데이터타입에 맞게 데이터를 저장(대입)하는 행위
+L-Value → 변수
+R-Value → int a = 10; // 10 상수
+          int b = a; // a 변수
+          int c = b*10; // b*10 연산식
+          int d = event(c); // event(c) 메소드 호출문
+int a; a = 10; 선언 + 할당
+int a = 10; 선언 + 초기화
+
+지역변수는 반드시 초기화를 해서 사용해야함(main 등의 메소드(block) 안에 선언된 변수)
+
+symbol table(심볼테이블) : 변수를 관리하는 테이블로 변수가 만들어지면 변수를 관리하는 테이블(symbol table)에 변수 정보가 저장된다.
+변수 정보 : 심볼테이블에 변수의 이름과 위치가 저장됨
+hash table(해쉬테이블) : 검색을 빠르게 하기 위해 만들어진 테이블로 symbol table는 hash table로 내부적으로 만들어져서 구현을 함
+
