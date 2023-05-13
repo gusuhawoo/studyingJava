@@ -73,7 +73,7 @@ JVM(Java Virtual Machine)란 무엇인가?
 기본자료형(Primitive Data Type,PDT) : 프로그램에서 기본적으로 제공해주는 자료형
 사용자정의자료형(User Define Data Type,UDDT) : 사용자가 만들어서 사용하는 자료형
 int,float,char,boolean → 기본자료형
-String,Book,Movie,Member → 사용자 정의 자료형(User Define Data Type,UDDT)
+String,Book,Movie,Member → 사용자 정의 자료형(User Define Data Type,UDDT),첫글자가 대문자
 
 Data Type |	크기	| 데이터(종류) |	Default Value(for fields)
 byte	| 1byte |	정수 |	0
@@ -85,10 +85,28 @@ double	| 8byte |	실수 |	0.0d
 char	| 2byte |	문자 |	\u0000,null
 boolean	| 1byte |	참,거짓 |	true, false
 
+기본 자료형(PDT)의 종류
+종류/크기 | 1byte | 2byte | 4byte | 8byte
+논리형   | boolean |     |       |
+문자형   |       | char  |       |
+정수형   | byte  | short | int   | long
+실수형   |       |       | float | double
+
+byte : -2⁷(-128)~2⁷-1(127)
+MSB : 0(양수),1(음수)
+short : -2¹⁵(-32,768)~2¹⁵-1(32,767)
+char : 0~2¹⁶-1(0~65,535)
+int(정수형의 표준) : -2³¹(-2,147,483,648)~231-1(2,147,483,647)
+long : -2⁶³(-9,223,372,036,854,775,808)~2⁶³-1(9,223,372,036,854,775,807)
+*floating point(부동소수점/浮動小數點) : float, double
+float : 4byte(exponent(지수),fraction/mantissa(가수))
+double(실수형의 표준) : 8byte
+
 API : 만들어진 자료형(객체자료형)
+객체지향 : 필요한 API를 언제든지 가져와서 원하는 것들을 만들 수 있음
 
 변수 선언 → 자료형(크기, 종류) + 변수 ; → int a;
-변수 할당 → L-Value = R-Value; → 변수에 지정된 데이터타입에 맞게 데이터를 저장(대입)하는 행위
+변수 할당(=) → L-Value = R-Value; → 변수에 지정된 데이터타입에 맞게 데이터를 저장(대입)하는 행위
 L-Value → 변수
 R-Value → int a = 10; // 10 상수
           int b = a; // a 변수
@@ -103,3 +121,13 @@ symbol table(심볼테이블) : 변수를 관리하는 테이블로 변수가 �
 변수 정보 : 심볼테이블에 변수의 이름과 위치가 저장됨
 hash table(해쉬테이블) : 검색을 빠르게 하기 위해 만들어진 테이블로 symbol table는 hash table로 내부적으로 만들어져서 구현을 함
 
+2⁷|2⁶|2⁵|2⁴|2³|2²|2¹|2⁰ ← weight
+  |64|32|16|8 |4 |2 |1
+2진수 → (01000101)₂
+8진수 → (105)₈
+10진수 → (69)₁₀
+16진수 → 0x45 → (45)₁₆
+2진수 3자리 = 8진수의 1자리
+2진수 4자리 = 16진수의 1자리
+
+프로그래밍에서 2진수를 표현할 때는 0b를 앞에 붙임 0b01000101
