@@ -131,3 +131,25 @@ hash table(해쉬테이블) : 검색을 빠르게 하기 위해 만들어진 테
 2진수 4자리 = 16진수의 1자리
 
 프로그래밍에서 2진수를 표현할 때는 0b를 앞에 붙임 0b01000101
+
+ASCII CODE : 아스키코드는 1바이트(128개)의 문자를 표현 할 수 있음(2⁷ᵇⁱᵗ=¹²⁸) → 0부터127까지
+Unicode(UTF-8) : 유니코드는 2바이트(65,536)개의 문자를 표현 할 수 있음(2¹⁶ᵇⁱᵗ=⁶⁵’⁵³⁶) → 0부터65,535까지
+'\u숫자' → 역슬래시 + u + 16진수 = 유니코드표현
+
+대문자(A)와 소문자(a)의 차이값= 32
+A = 65
+a = 97
+'a'-32='A'
+'A'+32='a'
+
+Casting(형변환)
+Data Type(값의 타입)을 다른 타입으로 변환하는 것
+* 자동형변환(묵시적) : small type → big type(byte → int)
+* 강제형변환(명시적) : big type → small type(int → byte,손실발생)
+* 강제형변환 : 타입을 강제로 맞춰야 한다.
+* boolean type는 형변환이 안된다.
+
+int(4byte) → char(2byte) = (char)65 → 'A'
+char(2byte) → int(4byte) = (int)'A' → 65
+float(4byte) → int(4byte) = (int)2.6f → 2(손실됨)
+int(4byte) → float(4byte) = (float)10 → 10.0f
